@@ -1,0 +1,5 @@
+{"class":"VERSION","release":"3.11","rev":"3.11-3","proto_major":3,"proto_minor":9}
+{"class":"DEVICES","devices":[{"class":"DEVICE","path":"/dev/ttyAMA0","driver":"MTK-3301","activated":"2017-09-02T00:05:39.930Z","flags":1,"native":0,"bps":9600,"parity":"N","stopbits":1,"cycle":1.00,"mincycle":0.20}]}
+{"class":"WATCH","enable":true,"json":true,"nmea":false,"raw":0,"scaled":false,"timing":false,"split24":false,"pps":false}
+{"class": "TPV","tag": "MID2","device": "/dev/ttyUSB0","mode": 2,"time": "2017-08-28T05:05:12.060Z","ept": 0.005,"lat": 42.7384326,"lon": -35.29572946,"epx": 5.31,"epy": 11.125,"track": 130,"speed": 0.128,"eps": 23.15}
+{"class": "TPV","tag": "MID2","device": "/dev/ttyUSB0","mode": 2,"time": "2017-08-28T05:05:13.060Z","ept": 0.005,"lat": 30.7384326,"lon": -70.29572946,"epx": 5.31,"epy": 11.125,"track": 130,"speed": 0.128,"eps": 23.15}

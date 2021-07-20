@@ -1,0 +1,57 @@
+phpGPSReader - reading GPS locations from gpspipe and put them in arrays.
+    Copyright (C) 2017  Ole-Henrik Jakobsen
+
+
+Software requirements:
+	php-cli			To run PHP code at command line interface.
+	`-> gpsd		Daemon for the GPS sensor.
+	`-> gpsd-clients	Package containing gpspipe.
+	or
+	`-> modemmanager	For reading location data from a USB 3G modem.
+
+	
+-----------------------------------------------------------------------------------------------------------
+ Supported daemons:	| Information
+-----------------------------------------------------------------------------------------------------------
+	Dummy		|	For testing purposes, based upon gpspipe
+-----------------------------------------------------------------------------------------------------------
+	gpsd		|	Output of "gpspipe -w"
+-----------------------------------------------------------------------------------------------------------
+        mmcli		|	Output from ModemManager, it's not supported by a lot of 
+			|	3G USB Modem devices.
+-----------------------------------------------------------------------------------------------------------
+
+
+Configuration of phpGPSReader:
+	Choose daemon to include and also enable and disable the test mode.
+	Config file: config.ini
+
+	
+Configuration of daemons:
+	Usually you don't have to configure anything, but you have some possibilities to configure each daemon.
+	
+
+Use phpGPSReader:
+	CLI:
+		cd /path/to/gpsreader
+		php gpsreader.php [daemon] (optional)[display errors {0|1}])
+			Optional:
+				1			Show errors/offsets
+				simple_location		Prints only location data: latitude,longitude (10.000,50.000)
+				
+	PHP:
+		$path = "/path/to/gpsreader";
+		chdir($path);
+		include_once("" . $path . "/gpspreader.php");
+
+
+Use phpGPSReader function:
+	function gpsreader(); = array
+	
+	Check contents of the array with: print_r(gpsreader());
+
+
+Information/torubleshooting:
+	The script is slow		->		It might take some time until the GPS signals are received by the GPS sensor (at least the first time),
+							You can adjust the settings for "gpsd" to limit the search time.
+							By default it will look for signals for a total of 30 minutes every 20 seconds (+10s which is the runtime of the script itself).
